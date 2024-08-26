@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess-like Game</title>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #001f3f; /* Dark blue background */
+    font-family: Arial, sans-serif;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(5, 100px);
+    gap: 2px; /* Small gap between grid cells */
+}
+
+.grid-cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* White text color */
+}
+
+.grid-cell:nth-child(odd) {
+    background-color: #333; /* Dark cells */
+}
+
+.grid-cell:nth-child(even) {
+    background-color: #fff; /* Light cells */
+}
+
+.grid-cell span {
+    color: #000; /* Black text for pieces */
+}
+
+.current-player {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 24px;
+}
+
+    </style>
+</head>
+<body>
+    <div id="board"></div>
+    <div id="controls"></div>
+    <button onclick="initializeGame()">Start New Game</button>
+    <div id="message"></div>
+    <script src="client.js"></script>
+</body>
+</html>
